@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %} - fossilnet</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>fossilnet</h1>
+        <nav>
+            <a href='/'>home</a> /
+            <a href='/api'>api</a>
+        </nav>
+    </header>
+
+    {% block body %}{% endblock %}
+
+    <footer>
+        <hr />
+        <small style="color:gray">&copy; 2020, licenced CC-BY</small>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script defer>
+$("document").ready(function(){
+    $("#submit").click(function(){
+        var url = $("#url").val();
+        $.ajax({
+            url: "http://127.0.0.1:5000/api/v1.0",
+            type: "POST",
+            contentType: "application/json",
+            data: JSON.stringify({"url": url}),
+            success: function(data) {
+                $('#result').html(data);
+            },
+        }).done(function(data) {
+            console.log(data);
+        });
+    });
+});
+</script>
+</head>
+<body>
+    <h1>fossilnet</h1>
+    <form>
+        <input type="text" id="url" name="url" placeholder="url" required="required" />
+        <button type="submit" id="submit">Predict</button>
+    </form>
+    <div id="result">blah</div>
+</body>
+</html>

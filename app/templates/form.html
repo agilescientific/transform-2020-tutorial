@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Form{% endblock %}
+{% block body %}
+
+<!-- More on forms: https://www.w3schools.com/html/html_forms.asp
+     More on input types: https://www.w3schools.com/html/html_form_input_types.asp
+-->
+
+<form action="/form" method="post">
+    <input type="url" name="url" placeholder="Paste a URL" required="required" size=64 />
+    <button type="submit">Predict</button>
+</form>
+
+{% if result %}
+
+    <p>{{ result['class'] }}: {{ "%.3f"|format(result['prob']) }}</p>
+
+    <!-- A bit more sophisticated:
+    <h3>
+        {{ result['class'] }}&nbsp;&nbsp;
+        <span style="color:lightgray">p = {{ "%.3f"|format(result['prob']) }}</span>
+    </h3>
+    <a href="{{ result['url'] }}"><img src={{ result['url'] }} /></a>
+    -->
+
+{% endif %}
+
+{% endblock %}

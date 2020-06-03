@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Index{% endblock %}
+{% block body %}
+
+<form action="/upload" method="POST" enctype="multipart/form-data">
+    <input type="file" accept="image/*" name="image" required="required" />
+    <button type="submit" name="action">Upload</button>
+</form>
+
+{% if result %}
+
+    <h3>
+        {{ result['class'] }}&nbsp;&nbsp;
+        <span style="color:lightgray">p = {{ "%.3f"|format(result['prob']) }}</span>
+    </h3>
+    <img src="data:image/png;base64,{{ result['image'] }}" />
+
+{% endif %}
+
+{% endblock %}
