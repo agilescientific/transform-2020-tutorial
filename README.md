@@ -10,6 +10,6 @@ I'll assume you have the `conda` package and environment manager. (If you don't 
 
     conda env create -f environment.yml
     conda activate t20-fri-mvp
+    python -m ipykernel install --user --name t20-fri-mvp
 
-
-
+Now you're ready to use the notebooks and the app in this repo.
