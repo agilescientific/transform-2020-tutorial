@@ -15,7 +15,7 @@ app = Flask(__name__)
 # cors = CORS(app)
 # app.config['CORS_HEADERS'] = 'Content-Type'
 
-CLF = joblib.load('data/rf.gz')
+CLF = joblib.load('rf.gz')
 
 @app.route('/')
 def root():
