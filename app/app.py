@@ -1,15 +1,18 @@
 from io import BytesIO
 import base64
+import joblib
 
 from flask import Flask, request, render_template, jsonify
-
-import joblib
 from PIL import Image
 
 import utils
 
 
 app = Flask(__name__)
+
+# Before running with `flask run` we must put ourselves in development mode:
+# Mac/Linux: export FLASK_ENV=development
+# Windows: set FLASK_ENV=development
 
 CLF = joblib.load('rf.gz')
 
@@ -150,7 +153,7 @@ def post():
     return jsonify(result)
 
 
-@app.route('/api/v1', methods=['POST'])
+@app.route('/api/v0.1', methods=['POST'])
 def api():
     """
     (8) Make a prediction from a base64-encoded image via POST request.

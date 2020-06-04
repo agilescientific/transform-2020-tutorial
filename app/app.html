@@ -3,20 +3,19 @@
 <html>
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script defer>
-$("document").ready(function(){
+<script>
+$(function(){
     $("#submit").click(function(){
         var url = $("#url").val();
         $.ajax({
-            url: "http://127.0.0.1:5000/api/v1.0",
-            type: "POST",
+            url: "http://127.0.0.1:5000/api/v0.2",
+            method: "POST",
             contentType: "application/json",
-            data: JSON.stringify({"url": url}),
-            success: function(data) {
-                $('#result').html(data);
+            data: JSON.stringify({"image": url}),
+            processData: false,
+            success: function(response) {
+                $("#result").html(JSON.parse(response));
             },
-        }).done(function(data) {
-            console.log(data);
         });
     });
 });
@@ -24,10 +23,10 @@ $("document").ready(function(){
 </head>
 <body>
     <h1>fossilnet</h1>
-    <form>
+    <form >
         <input type="text" id="url" name="url" placeholder="url" required="required" />
         <button type="submit" id="submit">Predict</button>
     </form>
-    <div id="result">blah</div>
+    <div id="result"></div>
 </body>
 </html>
