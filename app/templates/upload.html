@@ -13,7 +13,10 @@
         {{ result['class'] }}&nbsp;&nbsp;
         <span style="color:lightgray">p = {{ "%.3f"|format(result['prob']) }}</span>
     </h3>
-    <img src="data:image/png;base64,{{ result['image'] }}" />
+
+    {% if result['image'] %}
+        <img src="data:image/png;base64,{{ result['image'] }}" />
+    {% endif %}
 
 {% endif %}
 

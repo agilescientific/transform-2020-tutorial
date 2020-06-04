@@ -6,10 +6,17 @@
      More on input types: https://www.w3schools.com/html/html_form_input_types.asp
 -->
 
+<form action="/form" method="get">
+    <input type="url" name="url" placeholder="Paste a URL" required="required" size=64 />
+    <button type="submit">Predict</button>
+</form>
+
+<!-- POST form, with default form enctype="application/x-www-form-urlencoded" (GET-like)
 <form action="/form" method="post">
     <input type="url" name="url" placeholder="Paste a URL" required="required" size=64 />
     <button type="submit">Predict</button>
 </form>
+-->
 
 {% if result %}
 

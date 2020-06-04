@@ -30,12 +30,16 @@ def plot(probs, class_names):
 
     plt.tight_layout()
 
+    # Put in memory.
     handle = BytesIO()
     plt.savefig(handle, format='png', facecolor=fig.get_facecolor())
-    handle.seek(0)
-    figdata_png = base64.b64encode(handle.getvalue())
+    plt.close()
 
-    return figdata_png.decode('utf8')
+    # Encode.
+    handle.seek(0)
+    figdata_png = base64.b64encode(handle.getvalue()).decode('utf8')
+
+    return figdata_png
 
 def img_to_arr(img):
     """
