@@ -2,7 +2,7 @@
 
 **_Idea to MVP_ tutorial at TRANSFORM 2020**
 
-This repo contains everything you need to follow along with the tutorial.
+This repo contains everything you need to follow along with the tutorial. You can clone it with `git` or use the green button to download a ZIP file. Put it where you would normally keep your project files.
 
 I'll assume you have the `conda` package and environment manager. (If you don't have it, you can install it [from here](https://docs.conda.io/en/latest/miniconda.html).)
 
@@ -13,3 +13,13 @@ I'll assume you have the `conda` package and environment manager. (If you don't 
     python -m ipykernel install --user --name t20-fri-mvp
 
 Now you're ready to use the notebooks and the app in this repo.
+
+
+## Agenda
+
+- notebooks/Fossil_classifier_minimal.ipynb
+- notebooks/Hitting_some_web_APIs.ipynb
+- notebooks/Building_a_flask_app.ipynb (note that this is not a 'normal' notebook)
+- notebooks/Hitting_our_web_API.ipynb
+
+We will build everything else from scratch. However, there are 'complete' notebooks in `nb-master` if you prefer to read rather than type. And there is a complete app in app-master if you want the complete app.
