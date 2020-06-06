@@ -27,7 +27,7 @@ def root():
 
     # vp = float(request.args.get('vp') or 0)
     # rho = float(request.args.get('rho') or 0)
-    # return f"Impedance: {vp * rho}"
+    # return "Impedance: {}".format(vp * rho)
     return "Hello world"
 
 @app.route('/impedance')
@@ -38,7 +38,7 @@ def impedance():
     vp = float(request.args.get('vp') or 0)
     rho = float(request.args.get('rho') or 0)
     imp = vp * rho
-    return f"Impedance: {imp}"
+    return "Impedance: {}".format(imp)
 
 
 @app.route('/hello/<name>')
@@ -48,7 +48,7 @@ def hello(name):
     Getting resources from the path. This is good for querying databases:
     path parameters represent entities (tables in your DB, more or less).
     """
-    return f"Hello {name}"
+    return "Hello {}".format(name)
 
 
 @app.route('/predict')
