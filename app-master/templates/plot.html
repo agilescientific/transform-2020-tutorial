@@ -2,18 +2,33 @@
 {% block title %}Plot{% endblock %}
 {% block body %}
 
-
 <form action="/plot" method="POST" enctype="multipart/form-data">
     <input type="file" accept="image/*" name="image" required="required" />
-   <button type="submit" name="action">Upload</button>
+    <button type="submit" name="action">Upload</button>
 </form>
+
+<!-- This is a more sophisticated form. But the slider renders badly.
+<form action="/plot" method="POST" enctype="multipart/form-data">
+    <fieldset>
+        <legend>File upload</legend>
+        <input type="file" accept="image/*" name="image" required="required" />
+    </fieldset>
+    <fieldset>
+        <legend>Probability cutoff</legend><br>
+        <input type="range" min="1" max="100" value="50" name="cutoff">
+    </fieldset>
+    <button type="submit" name="action">Upload</button>
+</form>
+-->
 
 {% if result %}
 
     <h3>
         {{ result['class'] }}
         <span style="color:lightgray">p = {{ "%.3f"|format(result['prob']) }}</span>
+        <meter value="{{ result['prob'] }}"></meter>
     </h3>
+
     <img src="data:image/png;base64,{{ result['plot'] }}" width=100% />
     <img src="data:image/png;base64,{{ result['image'] }}" width=100% />
 
