@@ -25,8 +25,8 @@
 
     <h3>
         {{ result['class'] }}
-        <span style="color:lightgray">p = {{ "%.3f"|format(result['prob']) }}</span>
-        <meter value="{{ result['prob'] }}"></meter>
+        <!-- <meter style="margin: 0.4em 0.4em 0 0.4em;" max="1" low="0.3" high="0.5" optimum="1" value="{{ result['prob'] }}"></meter> -->
+        <span style="color:lightgray;">p = {{ "%.3f"|format(result['prob']) }}</span>
     </h3>
 
     <img src="data:image/png;base64,{{ result['plot'] }}" width=100% />
