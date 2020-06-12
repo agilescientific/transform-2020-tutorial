@@ -78,11 +78,15 @@ def predict():
 @app.route('/simple', methods=['GET'])
 def simple():
     """
-    (4a) Render a template.
+    (4a) Render a template. 
     """
     return render_template('simple_page.html')
 
 ## You could add an About page as an exercise.
+
+## A real website should also have a Terms page, especially
+## if users are uploading anything or creating user instances.
+## Check out https://www.termsfeed.com/
 
 @app.route('/form', methods=['GET'])
 def form():
@@ -118,7 +122,7 @@ def upload():
 
     return render_template('upload.html', result=result)
 
-## Can you combine both forms into one, letting the use upload an image
+## Can you combine both forms into one, letting the user upload an image
 ## or provide a URL?
 
 @app.route('/plot', methods=["GET", "POST"])
@@ -129,7 +133,7 @@ def plot():
     We'll use the exact same code as (3), except we'll add the plot.
     """
     if request.method == 'POST':
-        data = request.files['image'].read()
+        data = request.files.get('image').read()
         img = Image.open(BytesIO(data))
         result = utils.predict_from_image(CLF, img)
         result['image'] = base64.b64encode(data).decode('utf-8')
