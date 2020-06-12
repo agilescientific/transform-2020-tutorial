@@ -27,6 +27,7 @@ Now you're ready to use the notebooks and the app in this repo.
 ## Agenda
 
 - Introduction to this problem
+- `notebooks/Data Exploration-Clustering.ipynb`
 - `notebooks/Fossil_classifier_minimal.ipynb`
 - `notebooks/Hitting_some_web_APIs.ipynb`
 - `notebooks/Building_a_flask_app.ipynb` (note that this is not a 'normal' notebook)
